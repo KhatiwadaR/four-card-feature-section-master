@@ -1,0 +1,142 @@
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --grey-500: hsl(234, 12%, 34%);
+    --grey-400: hsl(212, 6%, 44%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+main {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.heading {
+    text-align: center;
+    max-width: 500px;
+}
+
+.heading h1 {
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: var(--grey-400);
+}
+
+.heading p:nth-of-type(1) {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--grey-500);
+}
+
+.heading p:nth-of-type(2) {
+    font-size: 0.9rem;
+    color: var(--grey-400);
+    margin: 10px 0;
+}
+
+.box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cyan {
+    --border-color: var(--cyan);
+}
+
+.red {
+    --border-color: var(--red);
+}
+
+.orange {
+    --border-color: var(--orange);
+}
+
+.blue {
+    --border-color: var(--blue);
+}
+
+.card {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    border-top: 4px solid var(--border-color);
+    background-color: var(--white);
+    box-shadow: 0px 10px 20px hsla(212, 91%, 26%, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    color: var(--grey-500);
+}
+
+.card p {
+    font-size: 0.8rem;
+    color: var(--grey-400);
+}
+
+.card img {
+    align-self: flex-end;
+    margin: 20px;
+}
+
+
+@media (min-width: 768px) {
+    main {
+        gap: 50px;
+    }
+    .box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .red {
+        grid-column: 2 / 3;
+        grid-row: 1 / span 2;
+    }
+
+    .cyan {
+        grid-column: 1 / 2;
+        grid-row: 2 / span 2;
+    }
+
+    .orange {
+        grid-column: 2 / 3;
+        grid-row: 3 / span 2;
+    }
+
+    .blue {
+        grid-column: 3 / 4;
+        grid-row: 2 / span 2;
+    }
+}
